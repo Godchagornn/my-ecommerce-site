@@ -4,7 +4,7 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const { fname, lname, email, subject, message } = req.body
     console.log('Content from submited', {fname, lname, email, subject, message});
-    res.status(200).json({status: 'Massage Received'});
+    res.status(200).json({status: 'Message Received'});
 });
 
 module.exports = router;
