@@ -1,0 +1,34 @@
+[
+  {
+    "firstName": "Godchagorn",
+    "lastName": "Kitima",
+    "email": "pan.godchagorn2548@gmail.com",
+    "password": "saipan123",
+    "category": "Healthcare",
+    "occupation": "Nurse"
+  },
+  {
+    "firstName": "Godchagorn",
+    "lastName": "Kitima",
+    "email": "pan.godchagorn@gmail.com",
+    "password": "sp110132",
+    "category": "Computer",
+    "occupation": "Designer"
+  },
+  {
+    "firstName": "Godchagorn",
+    "lastName": "Kitima",
+    "email": "pan.2548@gmail.com",
+    "password": "ppp99123",
+    "category": "Scientific",
+    "occupation": "Meteorologist"
+  },
+  {
+    "firstName": "Godchagorn",
+    "lastName": "Kitima",
+    "email": "pan..2548@gmail.com",
+    "password": "spgk123",
+    "category": "Scientific",
+    "occupation": "Medical Scientist"
+  }
+]

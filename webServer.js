@@ -11,25 +11,25 @@ const server = http.createServer(function (req, res) {
     if(filePath === "./") filePath = "./index.html";
 
     const path = require('path');
-    const extname = path.extname(filePath);
-    let contentType = "text/html";
-    if(extname === ".css") contentType = "text/css"; 
-    if(extname === ".xml") contentType = "text/xml";
-    if(extname === ".js") contentType = "application/js";
-
-
-    fs.readFile(filePath, function (err, htmlDoc) {
+        const extname = path.extname(filePath);
+        let contentType = "text/html";
+        if(extname === ".css") contentType = "text/css";
+        if(extname === ".xml") contentType = "text/xml";
+        if (extname === ".js") contentType = "application/javascript";
+        if (extname === ".json") contentType = "application/json";
+ 
+    fs.readFile(filePath, function(err,htmlDoc){
         if(err){
-            res.writeHead(200, {'Content-type': 'text/html'});
-            return res.end("404: File not found")
+            res.writeHead(200, { 'Content-Type':'text/html'});
+            return res.end("404: File not found!")
         }
-        res.writeHead(200, {'Content-Type': contentType});
-        var q = url.parse(req.url, true).query;
-        var txt = q.fname + ' ' + q.lname;
-        res.write(htmlDoc);
-        res.end();
-    });
-
+      res.writeHead(200, { 'Content-Type': contentType});
+      var q = url.parse(req.url, true).query;
+      var txt = q.fname + ' ' + q.lname;
+      res.write(htmlDoc)
+      res.end();
+    })
+  
 });
 
 server.listen(8080);

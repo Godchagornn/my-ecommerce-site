@@ -1511,112 +1511,132 @@
 
               <!-- Nav tabs -->
               <ul id="nav-login" class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#contact-us" aria-controls="contact-us" role="tab" data-toggle="tab">&nbsp;&nbsp;contact-us&nbsp;&nbsp;</a></li>
-                <li role="presentation"><a href="#register" aria-controls="profile" role="register" data-toggle="tab">&nbsp;&nbsp;Rigister&nbsp;&nbsp;</a></li>
-                <li role="presentation"><a href="#sing-In" aria-controls="messages" role="sing-In" data-toggle="tab">&nbsp;&nbsp;Sing-In&nbsp;&nbsp;</a></li>
+                <li role="presentation" class="active"><a href="#contact-us" aria-controls="home" role="tab"
+                    data-toggle="tab">&nbsp;&nbsp;Contact Us&nbsp;&nbsp;</a></li>
+                <li role="presentation"><a href="#register" aria-controls="profile" role="tab"
+                    data-toggle="tab">&nbsp;&nbsp;Register&nbsp;&nbsp;</a></li>
+                <li role="presentation"><a href="#sign-in" aria-controls="messages" role="tab"
+                    data-toggle="tab">&nbsp;&nbsp;Sign-In&nbsp;&nbsp;</a></li>
               </ul>
-            
+
               <!-- Tab panes -->
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="contact-us">
                   <form data-aos="fade">
-                  <div class="form-group row">
-                    <div class="col-md-6 mb-3 mb-lg-0">
-                      <input id="fname" name="fname" type="text" class="form-control" placeholder="First name">
+                    <div class="form-group row">
+                      <div class="col-md-6 mb-3 mb-lg-0">
+                        <input id="fname" name="fname" type="text" class="form-control" placeholder="First name">
+                      </div>
+                      <div class="col-md-6">
+                        <input id="lname" name="lname" type="text" class="form-control" placeholder="Last name">
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                      <input id="lname" name="lname" type="text" class="form-control" placeholder="Last name">
+
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <input id="email" name ="email" type="email" class="form-control" placeholder="Email">
+                      </div>
                     </div>
-                  </div>
+
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <!-- <input type="text" class="form-control" placeholder="Subject"> -->
+                        <select id="subject-select" name ="subjectSelect" class="form-control" onchange="show()">
+                          <option value="">Subject</option>
+                        </select>
+                      </div>
+                    </div>
 
 
-                  <div class="form-group row">
-                              <div class="col-md-12">
-                                <input id="email" name="email" type="email" class="form-control" placeholder="Email">
-                              </div>
-                            </div>
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <textarea id="message" name="message"class="form-control" id="" cols="30" rows="10"
+                          placeholder="Write your message here."></textarea>
+                      </div>
+                    </div>
 
+                    <div class="form-group row">
+                      <div class="col-md-6">
 
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <!--<input type="text" class="form-control" placeholder="Subject">-->
-                      <select id="subject-select" name="subjectSelect" class="form-control" onchange="show()">
-                        <option value="">Subject</option>
-                      </select>
+                        <input type="button" onclick="submitContact()" class="btn btn-primary py-3 px-5 btn-block" value="Send Message">
+                      </div>
                     </div>
-                  </div>
-        
-                  
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <textarea id="message" name="message" class="form-control" id="" cols="30" rows="10"
-                        placeholder="Write your message here."></textarea>
-                    </div>
-                  </div>
-        
-                  <div class="form-group row">
-                    <div class="col-md-6">
-                      <input type="button" onclick="submitContact()" class="btn btn-primary py-3 px-5 btn-block" value="Send Message">
-                    </div>
-                  </div>
-        
-                </form>
-              </div>
-                
+
+                  </form>
+                </div>
+
                 <div role="tabpanel" class="tab-pane" id="register">
-                  <form method="post" data-aos="fade">
-                  <div class="form-group row">
-                    <div class="col-md-6 mb-3 mb-lg-0">
-                      <input type="text" class="form-control" placeholder="First name">
+                  <form id="registration-form" method="post" data-aos="fade" onsubmit="submitRegistration(event)">
+                    <div class="form-group row">
+                      <div class="col-md-6 mb-3 mb-lg-0">
+                        <input type="text" id="First-name" class="form-control" placeholder="First name">
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" id="Last-name" class="form-control" placeholder="Last name">
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                      <input type="text" class="form-control" placeholder="Last name">
-                    </div>
-                  </div>
-        
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="text" class="form-control" placeholder="Occupation">
-                    </div>
-                  </div>
-        
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-md-6">
-        
-                      <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Rigister">
-                    </div>
-                  </div>
-        
-                </form>
-              </div>
                 
-                <div role="tabpanel" class="tab-pane" id="sing-In">
-                  <form method="post" data-aos="fade">                    
-        
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="text" class="form-control" placeholder="Username">
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <select id="Occupation-category" name="OccupationCatSelect" class="form-control"
+                          onchange="loadOccupationsFromCategory()">
+                          <option value="">Occupation Category</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
-        
-                  <div class="form-group row">
-                    <div class="col-md-12">
-                      <input type="password" class="form-control" placeholder="password">
+                
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <select id="Occupation-select" name="OccupationSelect" class="form-control" onchange="show()">
+                          <option value="">Occupation</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
-        
-                  <div class="form-group row">
-                    <div class="col-md-6">
-        
-                      <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Login">
+                
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <input type="email" id="Email" class="form-control" placeholder="Email">
+                      </div>
                     </div>
-                  </div>
-        
+
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <input type="password" id="Password" class="form-control" placeholder="Password">
+                      </div>
+                    </div>
+                
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Register">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="sign-in">
+                  <form method="post" data-aos="fade" onsubmit="submitLogin(event)">
+
+
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <input type="email" class="form-control" id="Login-email" placeholder="Username">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <input type="password" class="form-control" id="Login-password" placeholder="Password">
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <div class="col-md-6">
+
+                        <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Log In">
+                      </div>
+                    </div>
+
                 </form>
               </div>
                 
@@ -1791,11 +1811,98 @@
       })
     }
 
+    async function loadOccupationCat(url) {
+      try {
+        const response = await fetch(url);
+        const jsonObj = await response.json();
+
+        const select = document.getElementById("Occupation-category");
+        jsonObj.occupationCategory.forEach(cat => {
+          const option = document.createElement("option");
+          option.textContent = cat;
+          option.value = cat;
+          select.appendChild(option);
+        });
+      } catch (error) {
+        console.error("Error loading occupation categories:", error);
+      }
+    }
+
+    function loadOccupationsFromCategory() {
+      const categorySelect = document.getElementById("Occupation-category");
+      const selectedCategory = categorySelect.value.toLowerCase();
+      const occupationSelect = document.getElementById("Occupation-select");
+
+      occupationSelect.innerHTML = '<option value="">Occupation</option>';
+
+      if (selectedCategory === "") return;
+
+      fetch(`./json/${selectedCategory}.json`)
+        .then(response => response.json())
+        .then(data => {
+          data.occupation.forEach(occupation => {
+            const option = document.createElement("option");
+            option.value = occupation;
+            option.textContent = occupation;
+            occupationSelect.appendChild(option);
+          });
+        })
+        .catch(error => console.error("Error loading occupation data:", error));
+    }
+
+    async function submitLogin(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("Login-email").value.trim();
+      const password = document.getElementById("Login-password").value.trim();
+
+      if (!email || !password) {
+        alert("Please fill in both email and password.");
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:5000/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const result = await response.text();
+        alert(result);
+      } catch (error) {
+        console.error("Login error:", error);
+        alert("Something went wrong while logging in.");
+      }
+    }
+
     function show(){
       const select = document.getElementById("subject-select");
       console.log(select.value)
     }
 
+    </script>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const response = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    });
+
+  </script>
+
+  <script>
 
 
     window.onload = function(){
@@ -1806,8 +1913,10 @@
 
       loadDoc("./json/class_sunday.json", classJSON);
 
+      //loadSubject('./json/contact_subject.json')
       //loadSubject('http://localhost:4040/');
       loadSubject('http://localhost:4000/api/subject');
+      loadOccupationCat('http://localhost:4000/api/occupation-cat');
 
       document.getElementById('subscribe-form').addEventListener('submit', e => subscribeSubmit(e));
 }; 
@@ -1860,6 +1969,46 @@
         
     }
     
+
+    async function submitRegistration(event) {
+      event.preventDefault(); // stop normal form submission
+
+      const fname = document.getElementById("First-name").value.trim();
+      const lname = document.getElementById("Last-name").value.trim();
+      const email = document.getElementById("Email").value.trim();
+      const password = document.getElementById("Password").value.trim();
+      const category = document.getElementById("Occupation-category").value;
+      const occupation = document.getElementById("Occupation-select").value;
+
+      if (!fname || !lname || !email || !password || !category || !occupation) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:5000/api/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName: fname,
+            lastName: lname,
+            email,
+            password,
+            category,
+            occupation
+          }),
+        });
+
+        const result = await response.text();
+        alert(result);
+      } catch (error) {
+        console.error("Registration error:", error);
+        alert("Registration failed.");
+      }
+    }
+
+    document.querySelector('form').addEventListener('submit', submitRegistration);
+
 
 </script>
 
